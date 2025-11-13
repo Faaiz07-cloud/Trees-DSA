@@ -35,11 +35,12 @@ def binary_tree():
 
 root = binary_tree()
 
-def print_tree(node):
+def print_tree(node, level=0):
     if node is None:
         return
-    print(node.data) # prints root node to verify the tree
-
+    print("   " * level + str(node.data))
+    print_tree(node.left, level + 1)
+    print_tree(node.right, level + 1)
 
 print_tree(root)
 
