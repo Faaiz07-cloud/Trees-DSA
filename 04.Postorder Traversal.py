@@ -12,7 +12,6 @@ class Node:
         self.left = None
         self.right = None
 
-# A pointer which shows index num of list
 index = 0
 
 def binary_tree():
@@ -36,13 +35,11 @@ def binary_tree():
 
 root = binary_tree()
 
-def print_tree_preorder(node):
+def print_tree_postorder(node):
     if node is None:
         return
+    print_tree_postorder(node.left)
+    print_tree_postorder(node.right)
     print(node.data, end=" ")
-    print_tree_preorder(node.left)
-    print_tree_preorder(node.right)
 
-print_tree_preorder(root)
-
-
+print_tree_postorder(root)
